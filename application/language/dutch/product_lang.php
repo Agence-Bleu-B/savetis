@@ -51,4 +51,5 @@ $lang['creat']="schepping";
 
 /* slider */
 $lang['slidetitre1'] = "Een zachte beroerte ?";
+$lang['slidetitre2'] = "Voedingssupplementen van de C for het bereik zijn verpakt in bolus";
 ?>

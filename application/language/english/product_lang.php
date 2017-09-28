@@ -21,4 +21,5 @@ $lang['desc_gamme']='Specific ranges of nutraceuticals and hygiene products';
 $lang["formu_titre"]="contact us";
 /* slider */
 $lang['slidetitre1'] = "A soft stroke ?";
+$lang['slidetitre2'] = "Dietary supplements of the C for range are packaged in bolus";
 ?>

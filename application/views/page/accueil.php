@@ -182,7 +182,7 @@
             <div class="item">              
                 <div class="row">
                     <ul class="container">
-                        <h4 style="padding: 75px 0 0 0;font-size: 26px;">Les compléments alimentaires diététiques de la gamme C for sont conditionnés en bolus</h4>
+                        <h4 style="padding: 75px 0 0 0;font-size: 26px;"><?php echo lang('slidetitre2'); ?></h4>
                         <li class="col-md-3">
                             <img src="<?php echo img_url("mElmts/1.png") ?>" alt="Products Savetis">
                             <h4>C for Cal</h4>

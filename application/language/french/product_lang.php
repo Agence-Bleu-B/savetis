@@ -64,4 +64,5 @@ $lang['creat']="création";
 
 /* slider */
 $lang['slidetitre1'] = "Un coup de mou ?";
+$lang['slidetitre2'] = "Les compléments alimentaires diététiques de la gamme C for sont conditionnés en bolus";
 ?>
