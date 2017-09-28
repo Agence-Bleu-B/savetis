@@ -173,10 +173,10 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <h3>Un coup de mou ?</h3>
-              <img src="<?php echo img_url("cow.jpg")?>" alt="...">
+              <h3><?php echo lang('slidetitre1'); ?></h3>
+              <img src="<?php echo img_url('cow.jpg');?>" alt="...">
               <div class="carousel-caption">
-                Un coup de mou ?
+                <?php echo lang('slidetitre1'); ?>
               </div>
             </div>
             <div class="item">              
@@ -229,7 +229,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading"><?php echo lang('formu_titre') ?></h2>
+                    <h2 class="section-heading"><?php echo lang('formu_titre'); ?></h2>
                     <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>

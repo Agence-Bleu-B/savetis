@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- Custom CSS -->
- 	   <link href="<?php echo css_url("agency") ; ?>" rel="stylesheet">
+ 	   <link href="<?php echo css_url('agency') ; ?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">

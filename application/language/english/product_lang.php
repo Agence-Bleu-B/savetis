@@ -19,5 +19,6 @@ $lang['desc_gamme']='Specific ranges of nutraceuticals and hygiene products';
 
 /*form contact*/
 $lang["formu_titre"]="contact us";
-
+/* slider */
+$lang['slidetitre1'] = "A soft stroke ?";
 ?>

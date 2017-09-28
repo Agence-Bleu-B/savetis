@@ -61,4 +61,7 @@ $lang['newsletter_titre']='Pour être informé de nos offres promotionelles';
 $lang['copyr']="Copyright © 2015 Tous droits réservés";
 $lang['mentionl']="mentions légales";
 $lang['creat']="création";
+
+/* slider */
+$lang['slidetitre1'] = "Un coup de mou ?";
 ?>

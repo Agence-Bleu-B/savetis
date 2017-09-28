@@ -48,4 +48,7 @@ $lang['copyr']="Copyright © 2015 Alle rechten voorbehouden";
 $lang['mentionl']="wettelijke mededeling";
 $lang['creat']="schepping";
 
+
+/* slider */
+$lang['slidetitre1'] = "Een zachte beroerte ?";
 ?>
