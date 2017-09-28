@@ -1,0 +1,36 @@
+# RewriteEngine on
+# RewriteBase /
+# Hide the application and system directories by redirecting the request to index.php
+# RewriteRule ^(application|system|\.svn) index.php/$1 [L]
+# RewriteCond $1 !^(index\.php|images|robots\.txt|css|docs|js|system)
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php [L]
+
+# RewriteEngine on
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$http://www.gandidev-bleu-b.com/www.refontevvb/htdocs/index.php/$1 [L]
+#</IfModule>
+
+# temporarily disable Varnish
+# to make it easier to test changes
+#Header add Cache-Control "max-age=1"
+
+RewriteEngine On
+
+# Existing files and directories remain accessible
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.* - [L]
+
+# Redirect the rest
+RewriteCond $1 !^(index\.php|public|assets|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
