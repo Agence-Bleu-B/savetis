@@ -30,6 +30,28 @@ class Produit_model extends CI_Model
         }
         return $return;
     }
+    public function get_list_slider($lng){
+        //init return
+        $return = array();
+        //prepa requete
+            //get id from slier
+            //get from produits
+        //requete
+        $query = $this->db->query($foo);
+
+        // mise en variable
+        $i =0;
+        foreach ($query->result_array() as $row)
+        {
+            $return[$i]['nom'] = $row['nom'];
+            $return[$i]['id'] = $row['id'];
+            $return[$i]['image'] = $row['image'];
+            $return[$i]['text'] = $row['text'];
+            $return[$i]['pdf'] = $row['pdf'];
+            $i++;
+        }
+        return $return;
+    }
     // /********************************************/
     // /****** création d'une news         *********/
     // /********************************************/
