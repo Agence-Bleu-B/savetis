@@ -149,7 +149,7 @@
                                     <h3><?php echo $value['nom']; ?></h3>
                                     <p><?php echo $value['text']; ?></p>
                                     <?php if ($value['pdf'] != null && $value['pdf'] != '') { ?>
-                                        <a href="../pdf/<?php echo $value['pdf'] ;?>" style="float:right;"><?php echo lang('readmore')?></a>
+                                        <a href="../pdf/<?php echo $value['pdf'] ;?>" style="float:right;"><?php echo lang('readmore');?></a>
                                     <?php } ?>
                                 </div>
                             </div> 
@@ -183,30 +183,20 @@
                 <div class="row">
                     <ul class="container">
                         <h4 style="padding: 75px 0 0 0;font-size: 26px;"><?php echo lang('slidetitre2'); ?></h4>
-                        <li class="col-md-3">
-                            <img src="<?php echo img_url("mElmts/1.png") ?>" alt="Products Savetis">
-                            <h4>C for Cal</h4>
-                            <p>Bolus de calcium et magnésium pour la gestion des fièvres vitulaires.</p>
-                            <a href="#">En savoir plus</a>
-                        </li>
-                        <li class="col-md-3">
-                            <img src="<?php echo img_url("mElmts/2.png") ?>" alt="Products Savetis">
-                            <h4>C for Phos</h4>
-                            <p>Capsule pour la gestion du déficit en phosphore chez la vache.</p>
-                            <a href="#">En savoir plus</a>
-                        </li>
-                        <li class="col-md-3">
-                            <img src="<?php echo img_url("mElmts/3.png") ?>" alt="Products Savetis">
-                            <h4>C for Kalium</h4>
-                            <p>Capsule pour la gestion du déficit en potassium chez la vache.</p>
-                            <a href="#">En savoir plus</a>
-                        </li>
-                        <li class="col-md-3">
-                            <img src="<?php echo img_url("mElmts/9-r.png") ?>" alt="Products Savetis">
-                            <h4>C for Lance Bolus</h4>
-                            <p>Gel homogène pour la gestion des hypocalcémies et hypophosphatémies chez les ruminants.</p>
-                            <a href="#">En savoir plus</a>
-                        </li>
+                        <?php foreach ($slider_liste as $key => $value) { ?>
+                            <li class="col-md-3">
+                                <?php if ($value['image'] != null && $value['image'] != '') { ?>
+                                    <img src="<?php echo img_url("mElmts/".$value['image']) ; ?>" alt="Products Savetis">
+                                <?php } else { ?>
+                                    <img src="http://via.placeholder.com/170x240" alt="Products Savetis">
+                                <?php } ?> 
+                                <h4><?php echo $value['nom']; ?></h4>
+                                <p><?php echo $value['text']; ?></p>
+                                <?php if ($value['pdf'] != null && $value['pdf'] != '') { ?>
+                                    <a href="../pdf/<?php echo $value['pdf'] ;?>"><?php echo lang('readmore');?></a>
+                                <?php } ?>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
