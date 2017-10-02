@@ -26,6 +26,7 @@ class Page extends CI_Controller {
         $this->data['macro_liste'] = $this->produit_model->get_list('macro-elements',$this->language);
         $this->data['digest_liste'] = $this->produit_model->get_list('digest',$this->language);
         $this->data['hygiene_liste'] = $this->produit_model->get_list('hygiene',$this->language);
+        $this->data['slider_liste'] = $this->produit_model->get_list_slider($this->language);
         //vue
 		$this->load->view('common/head');
 		$this->load->view('common/header');
