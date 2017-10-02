@@ -285,39 +285,20 @@
         <div class="container">
             <h2><?php echo lang('newsletter_titre')?></h2>
             <div style="margin-top:5%;" class="row">                
-                <div class="col-md-8 col-md-offset-4 text-center row"> 
-                    <!-- Begin MailChimp Signup Form -->
-                    <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-                    <style type="text/css">
-                        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-                        
-                         /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-                           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                    </style>
-                    <div id="mc_embed_signup" class="col-md-6">
-                        <form action="//bleu-b.us4.list-manage.com/subscribe/post?u=cfe34b832b0792f168535121f&amp;id=f8510d350a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div class="col-md-8 col-md-offset-4 text-center row">
+                    <div class="col-md-6">
+                        <form action="<?php echo site_url('page'); ?>" method="post">
                             <div id="mc_embed_signup_scroll">
-                                <div class="indicates-required"><span class="asterisk">*</span> <?php echo lang('ind_req')?></div>
-                              
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="<?php echo lang('email')?>*" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" class="form-control" placeholder="<?php echo lang('email')?>*" id="email" name="mail" required data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                
                             </div>   
-                    
-
                             <div class="col-md-12">
-                                
-                                <div style="position: absolute; left: -5000px;"><input type="text" name="b_cfe34b832b0792f168535121f_f8510d350a" tabindex="-1" value=""></div>
                                 <div class="clear"><input type="submit" value="<?php echo lang('btn_abon')?>" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                             </div>
-                    
                         </form>
                     </div>
-
-                        <!--End mc_embed_signup-->
-                        <!-- -->
                 </div>
 
 
@@ -341,7 +322,7 @@
 
     <!-- Contact Form JavaScript -->
     <script src="<?php echo js_url("jqBootstrapValidation") ?>"></script>
-    <script src="<?php echo js_url("contact_me") ?>"></script>
+    <!-- <script src="<?php echo js_url("contact_me") ?>"></script> -->
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo js_url("agency") ?>"></script>

@@ -20,6 +20,16 @@ class Page extends CI_Controller {
 
 	public function index()
 	{
+
+		//si reception inscription newsletter
+		if (isset($_POST['subscribe'])) {
+			$test = array(
+			        'mail' => $_POST['mail']
+			);
+
+			$this->db->insert('newsletter', $test);
+		}
+
         $this->load->model('produit_model');
         $this->data['drench_liste'] = $this->produit_model->get_list('drench',$this->language);
         $this->data['cetose_liste'] = $this->produit_model->get_list('cetose',$this->language);
