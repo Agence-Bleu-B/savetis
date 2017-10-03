@@ -225,25 +225,25 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
+                    <form name="sentMessage" method="post" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-8 row">
                                <div class="col-md-8">
                                    <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="<?php echo lang('nom')?> *" id="lname" required data-validation-required-message="Please enter your name.">
+                                    <input type="text" class="form-control" placeholder="<?php echo lang('nom')?> *" id="lname" name="lname" required data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>                                
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="<?php echo lang('prenom')?> *" id="fname" required data-validation-required-message="Please enter your name.">
+                                    <input type="text" class="form-control" placeholder="<?php echo lang('prenom')?> *" id="fname" name="fname" required data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="<?php echo lang('email')?> *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" class="form-control" placeholder="<?php echo lang('email')?> *" id="email" name="email" required data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
 
                                 <div class="form-group">
-                                    <select>
+                                    <select name="agence" >
                                         <option>Alcyon Aras</option>
                                         <option>Alcyon Landerneau</option>
                                         <option>Alcyon Lyon</option>
@@ -259,11 +259,11 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="<?php echo lang('msg')?> *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <textarea class="form-control" placeholder="<?php echo lang('msg')?> *" id="message" name="message" required data-validation-required-message="Please enter a message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl" style="margin: 0 35%"><?php echo lang('btn_envoie')?></button>
+                                <button type="submit" name="envoimail" class="btn btn-xl" style="margin: 0 35%"><?php echo lang('btn_envoie')?></button>
                                 </div>
                             </div>
                             <div class="col-md-3">
