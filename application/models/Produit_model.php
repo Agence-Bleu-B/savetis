@@ -77,6 +77,27 @@ class Produit_model extends CI_Model
         }
         return $return;
     }
+    /***************************************************************************/
+    /** fonction permettant de retrouver les images des produits pour l'admin **/
+    /***************************************************************************/
+    public function get_list_admin($cat){
+        //init return
+        $return = array();
+        //prepa requete
+        $foo = 'SELECT nom,image,id FROM produits WHERE categorie = "'.$cat.'"' ;
+        //requete
+        $query = $this->db->query($foo);
+
+        // mise en variable
+        $i =0;
+        foreach ($query->result_array() as $row)
+        {
+            $return[$i]['nom'] = $row['nom'];
+            $return[$i]['id'] = $row['id'];
+            $i++;
+        }
+        return $return;
+    }
     // /********************************************/
     // /****** création d'une news         *********/
     // /********************************************/
