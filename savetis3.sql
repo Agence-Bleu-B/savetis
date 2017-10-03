@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 03 Octobre 2017 à 13:12
+-- Généré le :  Mar 03 Octobre 2017 à 13:17
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -23,20 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `newsletter`
---
-
-CREATE TABLE `newsletter` (
-  `id` int(10) NOT NULL,
-  `mail` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `produits`
 --
 
+DROP TABLE IF EXISTS `produits`;
 CREATE TABLE `produits` (
   `id` int(11) NOT NULL,
   `nom` varchar(30) NOT NULL,
@@ -86,43 +76,9 @@ INSERT INTO `produits` (`id`, `nom`, `categorie`, `entext`, `dutext`, `frtext`, 
 (26, 'hydeachlorhex', 'hygiene', NULL, NULL, NULL, 1, 1, 1, '', '', '', ''),
 (27, 'C for Lance Bolus', 'macro-elements', NULL, NULL, 'Gel homogène pour la gestion des hypocalcémies et hypophosphatémies chez les ruminants.', 0, 0, 0, '9-r.png', '', '', '');
 
--- --------------------------------------------------------
-
---
--- Structure de la table `slider`
---
-
-CREATE TABLE `slider` (
-  `sl1fr` int(11) NOT NULL,
-  `sl2fr` int(11) NOT NULL,
-  `sl3fr` int(11) NOT NULL,
-  `sl4fr` int(11) NOT NULL,
-  `sl1en` int(11) NOT NULL,
-  `sl2en` int(11) NOT NULL,
-  `sl3en` int(11) NOT NULL,
-  `sl4en` int(11) NOT NULL,
-  `sl1du` int(11) NOT NULL,
-  `sl2du` int(11) NOT NULL,
-  `sl3du` int(11) NOT NULL,
-  `sl4du` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Contenu de la table `slider`
---
-
-INSERT INTO `slider` (`sl1fr`, `sl2fr`, `sl3fr`, `sl4fr`, `sl1en`, `sl2en`, `sl3en`, `sl4en`, `sl1du`, `sl2du`, `sl3du`, `sl4du`) VALUES
-(9, 10, 11, 27, 9, 10, 11, 27, 9, 10, 11, 12);
-
 --
 -- Index pour les tables exportées
 --
-
---
--- Index pour la table `newsletter`
---
-ALTER TABLE `newsletter`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `produits`
@@ -134,11 +90,6 @@ ALTER TABLE `produits`
 -- AUTO_INCREMENT pour les tables exportées
 --
 
---
--- AUTO_INCREMENT pour la table `newsletter`
---
-ALTER TABLE `newsletter`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `produits`
 --
