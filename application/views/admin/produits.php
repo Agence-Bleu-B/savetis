@@ -218,7 +218,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- debut bloc photos -->
                 <div id="image-<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
                   <!-- form photo -->
-                  <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
+                  <form method="post" action="" enctype="multipart/form-data" >
                   <?php if($value['image'] != '' || $value['image'] != null){ if($value['categorie'] == 'macro-elements'){ $src = 'mElmts';}else{$src = $value['categorie'];} ?>
                     <img src="<?php echo base_url()."assets/images/".$src."/".$value["image"] ; ?>">
                     <div><?php echo $value['image']; ?></div>

@@ -52,7 +52,9 @@ class Admin extends CI_Controller {
 		if (isset($_POST['delete'])) {
 			$this->produit_model->delete_produit($_POST['id']);
 		}
-
+		if (isset($_POST['changephoto'])) {
+			echo $this->produit_model->modif_image($_POST,$_FILES);
+		}
 
 
 
