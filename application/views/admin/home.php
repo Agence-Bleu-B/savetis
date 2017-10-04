@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           	</div>
           	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
           		<div class="div-square">
-	               	<a href="<?php echo site_url('admin/gestionpersonnel'); ?>" >
+	               	<a href="<?php echo site_url('admin/slider'); ?>" >
 						<i class="fa fa-desktop fa-5x"></i>
 	          			<h4>Slider</h4>
 	          		</a>
@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           	</div>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
               <div class="div-square">
-                  <a href="<?php echo site_url('admin/gestionpersonnel'); ?>" >
+                  <a href="<?php echo site_url('admin/newsletter'); ?>" >
             <i class="fa fa-newspaper-o fa-5x"></i>
                   <h4>Newsletter</h4>
                 </a>

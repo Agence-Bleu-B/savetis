@@ -48,10 +48,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <a href="<?php echo site_url('admin/produits'); ?>"><i class="fa fa-product-hunt "></i>Produits</a>
                     </li>
                     <li <?php if ($pagecours == 'slider'||$pagecours == 'modifperso') {echo 'class="active-link"';}?>>
-                        <a href="<?php echo site_url('admin/gestionpersonnel'); ?>"><i class="fa fa-desktop "></i>Slider</a>
+                        <a href="<?php echo site_url('admin/slider'); ?>"><i class="fa fa-desktop "></i>Slider</a>
                     </li>
                     <li <?php if ($pagecours == 'newsletter'||$pagecours == 'modifperso') {echo 'class="active-link"';}?>>
-                        <a href="<?php echo site_url('admin/gestionpersonnel'); ?>"><i class="fa fa-newspaper-o "></i>Newsletter</a>
+                        <a href="<?php echo site_url('admin/newsletter'); ?>"><i class="fa fa-newspaper-o "></i>Newsletter</a>
                     </li>
                 </ul>
             </div>
