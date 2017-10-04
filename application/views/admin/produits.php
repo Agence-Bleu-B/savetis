@@ -196,7 +196,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- debut bloc pdf -->
                 <div id="pdf-<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
                   <!-- form pdf -->
-                  <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
+                  <form method="post" action="" enctype="multipart/form-data" >
                   
                     <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
                     <div>pdf anglais</div>

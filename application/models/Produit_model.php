@@ -176,9 +176,45 @@ class Produit_model extends CI_Model
         );
         $this->db->where('id', $post['id']);
         $this->db->update('produits', $data);
-       return $test;
     }
     /****************************************************************************/
     /** modif pdf                                            **/
     /***************************************************************************/
+    public function modif_pdf($post,$files){
+        //load library
+        $this->load->library('upload');
+        // config upload
+        $chemin = './pdf';
+        $config['upload_path'] = $chemin;
+        $config['allowed_types'] = 'pdf';
+        $config['max_size']    = '0';
+        $this->upload->initialize($config);
+        if (isset($files['enpdf']) && $files['enpdf']['name'] != '' ) {
+            $filename=$files['enpdf']['name'];
+            $this->upload->do_upload('enpdf');
+            $data = array(
+                    'enpdf'  => $this->upload->data('file_name')
+            );
+            $this->db->where('id', $post['id']);
+            $this->db->update('produits', $data);
+        }
+        if (isset($files['dupdf']) && $files['dupdf']['name'] != '' ) {
+            $filename=$files['dupdf']['name'];
+            $this->upload->do_upload('dupdf');
+            $data = array(
+                    'dupdf'  => $this->upload->data('file_name')
+            );
+            $this->db->where('id', $post['id']);
+            $this->db->update('produits', $data);
+        }
+        if (isset($files['frpdf']) && $files['frpdf']['name'] != '' ) {
+            $filename=$files['frpdf']['name'];
+            $this->upload->do_upload('frpdf');
+            $data = array(
+                    'frpdf'  => $this->upload->data('file_name')
+            );
+            $this->db->where('id', $post['id']);
+            $this->db->update('produits', $data);
+        }
+    }
 }
