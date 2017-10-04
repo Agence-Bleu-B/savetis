@@ -58,7 +58,7 @@ class Admin extends CI_Controller {
 		if (isset($_POST['changepdf'])) {
 			$this->produit_model->modif_pdf($_POST,$_FILES);
 		}
-		
+
         $this->data['produits_liste'] = $this->produit_model->get_list_admin();
 		//affichage page selon connection
 		if ($this->isco) {
@@ -73,6 +73,10 @@ class Admin extends CI_Controller {
 	}
 	public function slider()
 	{
+		$this->load->model('produit_model');
+		$this->data['produits_liste'] = $this->produit_model->get_list_admin();
+		//rajouter une selcetion des elmnts slider
+
 		//affichage page selon connection
 		if ($this->isco) {
 			$this->load->view('admin/header',$this->data);
