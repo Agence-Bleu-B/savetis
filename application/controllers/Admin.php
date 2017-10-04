@@ -45,11 +45,7 @@ class Admin extends CI_Controller {
 	public function produits()
 	{
 		$this->load->model('produit_model');
-        $this->data['drench_liste'] = $this->produit_model->get_list_admin('drench');
-        $this->data['cetose_liste'] = $this->produit_model->get_list_admin('cetose');
-        $this->data['macro_liste'] = $this->produit_model->get_list_admin('macro-elements');
-        $this->data['digest_liste'] = $this->produit_model->get_list_admin('digest');
-        $this->data['hygiene_liste'] = $this->produit_model->get_list_admin('hygiene');
+        $this->data['produits_liste'] = $this->produit_model->get_list_admin();
 		//affichage page selon connection
 		if ($this->isco) {
 			$this->load->view('admin/header',$this->data);
