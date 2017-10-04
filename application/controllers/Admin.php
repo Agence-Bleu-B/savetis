@@ -45,6 +45,19 @@ class Admin extends CI_Controller {
 	public function produits()
 	{
 		$this->load->model('produit_model');
+		//gestion des requetes
+		if (isset($_POST['new'])) {
+			$this->produit_model->ajout_produit($_POST);
+		}
+		if (isset($_POST['delete'])) {
+			$this->produit_model->delete_produit($_POST['id']);
+		}
+
+
+
+
+
+
         $this->data['produits_liste'] = $this->produit_model->get_list_admin();
 		//affichage page selon connection
 		if ($this->isco) {

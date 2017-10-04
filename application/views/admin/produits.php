@@ -74,19 +74,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class=" ">
                      <div class="checkbox">
                       <label class="checkbox">
-                       <input name="pays" type="checkbox" value="FR"/>
+                       <input name="pays[]" type="checkbox" value="FR"/>
                        FR
                       </label>
                      </div>
                      <div class="checkbox">
                       <label class="checkbox">
-                       <input name="pays" type="checkbox" value="NL"/>
+                       <input name="pays[]" type="checkbox" value="NL"/>
                        NL
                       </label>
                      </div>
                      <div class="checkbox">
                       <label class="checkbox">
-                       <input name="pays" type="checkbox" value="EN"/>
+                       <input name="pays[]" type="checkbox" value="EN"/>
                        EN
                       </label>
                      </div>
@@ -94,7 +94,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    </div>
                    <div class="form-group">
                     <div>
-                     <button class="btn btn-primary " name="submit" type="submit">
+                     <button class="btn btn-primary " name="new" type="new">
                       Cr&eacute;er
                      </button>
                     </div>
@@ -194,42 +194,52 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <!-- fin bloc textes -->
                 <!-- debut bloc pdf -->
-                <!-- debut bloc pdf -->
-                <!-- debut bloc photos -->
-                <div id="im<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
-<!--                   <form method="post" action="<?php echo site_url('admin/realisations'); ?>">
- -->                  <!-- form supp -->
-                  <!-- <div class="col-md-12">Suppression</div>
-                    <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
-                    <div class="form-group">
-                      <?php $v=0; foreach ($value['photos'] as $cle => $photo) { if($photo != 'noPics.png'){ ?>
-                        
-                      <div class="col-md-3" style="width: auto;"><label class="btn btn-danger" style="padding: 0px;margin-bottom: 10px;"><img src="<?php echo img_url($photo); ?>" alt="..." class="img-thumbnail img-responsive img-check" style="max-width: 200px;" ><input type="checkbox" name="tosup[]" id="item<?php echo $v; ?>" value="<?php echo $photo ; ?>" class="hidden" autocomplete="off"></label></div>
-                    
-                    <?php $v++;} } ?>
-                    </div>
-                    <div class="col-md-12" ><input type="submit" style="margin-bottom: 20px;" class="btn btn-default" style="margin-top: 20px;" name="supphCH" value="supprimer"></div>
-                  </form> -->
-
-                  <!-- form add -->
+                <div id="pdf-<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
+                  <!-- form pdf -->
+                  <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
                   
-                  <!-- <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
-                  <div class="col-md-12">Ajout</div>
-                    <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-                    <input type="file" name="photo">
-                    <div class="col-md-12" ><input type="submit" class="btn btn-default" style="margin-top: 20px;" name="addphCH" value="envoyer"></div>
-                  </form> -->
-                </div>
-                <!-- fin bloc photos -->
-                <!-- debut bloc suppression  -->
-                <div id="sup-<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
-                  <form method="post" action="<?php echo site_url('admin/produits'); ?>">
-                    <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-                    <div class="col-md-12" >Voulez vous vraiment supprimer cette entrée ?</div>
-                    <div class="col-md-12" ><input type="submit" class="btn btn-default" name="supression" value="Supprimer"></div>
+                    <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
+                    <div>pdf anglais</div>
+                    <div><?php echo $value['enpdf']; ?></div>
+                    <a href="<?php echo base_url().'pdf/'.$value['enpdf']; ?>"><?php echo base_url().'pdf/'.$value['enpdf']; ?></a>
+                    <input type="file" name="enpdf">
+                    <div>pdf français</div>
+                    <div><?php echo $value['frpdf']; ?></div>
+                    <a href="<?php echo base_url().'pdf/'.$value['frpdf']; ?>"><?php echo base_url().'pdf/'.$value['frpdf']; ?></a>
+                    <input type="file" name="frpdf">
+                    <div>pdf hollandais</div>
+                    <div><?php echo $value['dupdf']; ?></div>
+                    <a href="<?php echo base_url().'pdf/'.$value['dupdf']; ?>"><?php echo base_url().'pdf/'.$value['dupdf']; ?></a>
+                    <input type="file" name="dupdf">
+                    <div class="col-md-12" ><input type="submit" class="btn btn-default" style="margin-top: 20px;" name="changepdf" value="envoyer"></div>
                   </form>
                 </div>
-                <!-- fin bloc suppression -->
+                <!-- debut bloc pdf -->
+                <!-- debut bloc photos -->
+                <div id="image-<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
+                  <!-- form photo -->
+                  <form method="post" action="<?php echo site_url('admin/realisations'); ?>" enctype="multipart/form-data" >
+                  <?php if($value['image'] != '' || $value['image'] != null){ if($value['categorie'] == 'macro-elements'){ $src = 'mElmts';}else{$src = $value['categorie'];} ?>
+                    <img src="<?php echo base_url()."assets/images/".$src."/".$value["image"] ; ?>">
+                    <div><?php echo $value['image']; ?></div>
+                  <?php } ?>
+                    <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
+                    <input type="hidden" name="cat" value="<?php echo $value['categorie']; ?>">
+
+                    <input type="file" name="photo">
+                    <div class="col-md-12" ><input type="submit" class="btn btn-default" style="margin-top: 20px;" name="changephoto" value="envoyer"></div>
+                  </form>
+                </div>
+                <!-- fin bloc photos -->
+                <!-- debut bloc delete -->
+                <div id="sup-<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;">
+                  <form method="post" action="">
+                    <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
+                    <div class="col-md-12" >Voulez vous vraiment supprimer cette entrée ?</div>
+                    <div class="col-md-12" ><input type="submit" class="btn btn-default" name="delete" value="Supprimer"></div>
+                  </form>
+                </div>
+                <!-- fin bloc delete -->
              <?php } ?>   
           </div>
       	</div>
