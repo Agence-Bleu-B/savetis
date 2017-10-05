@@ -58,6 +58,9 @@ class Admin extends CI_Controller {
 		if (isset($_POST['changepdf'])) {
 			$this->produit_model->modif_pdf($_POST,$_FILES);
 		}
+		if (isset($_POST['modif'])) {
+			$this->produit_model->modif_produit($_POST);
+		}
 
         $this->data['produits_liste'] = $this->produit_model->get_list_admin();
 		//affichage page selon connection

@@ -147,6 +147,44 @@ class Produit_model extends CI_Model
 
         $this->db->insert('produits', $data);   
     }
+     /***************************************************************************/
+    /** modif d'un produit                                                    **/
+    /***************************************************************************/
+    public function modif_produit($post){
+        foreach ($post['pays'] as $key => $value) {
+            if ($value == 'FR') {
+                $fr = 1;
+            }
+            if ($value == 'NL') {
+                $du = 1;
+            }
+            if ($value == 'EN') {
+                $en = 1;
+            }
+        }
+        if (!isset($fr)) {
+            $fr = 0;
+        }
+        if (!isset($en)) {
+            $en = 0;
+        }
+        if (!isset($du)) {
+            $du = 0;
+        }
+        //prepa requete
+        $data = array(
+            'nom' => $post['nom'],
+            'categorie' => $post['cat'],
+            'entext' => $post['texten'],
+            'frtext' => $post['textfr'],
+            'dutext' => $post['textdu'],
+            'duapp' => $du,
+            'frapp' => $fr,
+            'enapp' => $en
+        );
+        $this->db->where('id', $post('id');
+        $this->db->update('produits', $data);   
+    }
    /****************************************************************************/
     /** suppression d'un produit                                              **/
     /***************************************************************************/

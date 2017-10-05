@@ -112,6 +112,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <!-- debut bloc textes -->
                 <div id="<?php echo $value['id']; ?>" class="col-md-12 jumbotron lity-hide" style="margin-left: 30px;margin-right: 100px;width: 80%;border-radius: 10px;overflow: scroll;">
                   <form method="post">
+                  <input type="hidden" name="id" value="<?php echo $value['id'] ;?>" >
                    <div class="form-group form-group-sm">
                     <label class="control-label " for="nom">
                      nom
