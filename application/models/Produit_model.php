@@ -182,7 +182,7 @@ class Produit_model extends CI_Model
             'frapp' => $fr,
             'enapp' => $en
         );
-        $this->db->where('id', $post('id');
+        $this->db->where('id', $post('id'));
         $this->db->update('produits', $data);   
     }
    /****************************************************************************/
