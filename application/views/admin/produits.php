@@ -166,19 +166,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class=" ">
                      <div class="checkbox">
                       <label class="checkbox">
-                       <input name="pays" type="checkbox" value="FR" <?php if($value['frapp'] == 1){echo "checked";} ?> />
+                       <input name="pays[]" type="checkbox" value="FR" <?php if($value['frapp'] == 1){echo "checked";} ?> />
                        FR
                       </label>
                      </div>
                      <div class="checkbox">
                       <label class="checkbox">
-                       <input name="pays" type="checkbox" value="NL" <?php if($value['duapp'] == 1){echo "checked";} ?> />
+                       <input name="pays[]" type="checkbox" value="NL" <?php if($value['duapp'] == 1){echo "checked";} ?> />
                        NL
                       </label>
                      </div>
                      <div class="checkbox">
                       <label class="checkbox">
-                       <input name="pays" type="checkbox" value="EN" <?php if($value['enapp'] == 1){echo "checked";} ?> />
+                       <input name="pays[]" type="checkbox" value="EN" <?php if($value['enapp'] == 1){echo "checked";} ?> />
                        EN
                       </label>
                      </div>

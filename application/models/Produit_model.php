@@ -182,7 +182,7 @@ class Produit_model extends CI_Model
             'frapp' => $fr,
             'enapp' => $en
         );
-        $this->db->where('id', $post('id'));
+        $this->db->where('id', $post['id']);
         $this->db->update('produits', $data);   
     }
    /****************************************************************************/
@@ -216,7 +216,7 @@ class Produit_model extends CI_Model
         $this->db->update('produits', $data);
     }
     /****************************************************************************/
-    /** modif pdf                                            **/
+    /** modif pdf                                                             **/
     /***************************************************************************/
     public function modif_pdf($post,$files){
         //load library
