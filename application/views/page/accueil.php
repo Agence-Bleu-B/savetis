@@ -173,8 +173,12 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner" role="listbox">
             <div class="item active">
-              <h3><?php echo lang('slidetitre1'); ?></h3>
-              <img src="<?php echo img_url('cow.jpg');?>" alt="...">
+              <!-- <h3><?php echo $lang/*lang('slidetitre1')*/; ?></h3> -->
+              <?php if ($lang == "french" ) { ?>
+              <img src="<?php echo img_url('Un-coup-de-mou-FR-BD.jpg');?>" alt="...">
+              <?php } if ($lang == "dutch"){ ?>
+              <img src="<?php echo img_url('Un-coup-de-mou-NL-BD.jpg');?>" alt="...">
+              <?php } ?>
               <div class="carousel-caption">
                 <?php echo lang('slidetitre1'); ?>
               </div>
@@ -226,6 +230,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <form name="sentMessage" method="post" id="contactForm" novalidate>
+                    <input type="hidden" name="bobot">
                         <div class="row">
                             <div class="col-md-8 row">
                                <div class="col-md-8">

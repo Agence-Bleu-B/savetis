@@ -23,8 +23,10 @@ class Page extends CI_Controller {
 
 		//si envoi mail
 		if (isset($_POST['envoimail'])) {
-			$mail = 'webmaster@bleu-b.com'; // Déclaration de l'adresse de destination.
-			//$mail = 'info@savetis.com';
+			//verif bots
+			if ($_POST['bobot'] == '') {
+			//$mail = 'webmaster@bleu-b.com'; // Déclaration de l'adresse de destination.
+			$mail = 'info@savetis.com';
 
 			if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui présentent des bogues.
 
@@ -134,7 +136,7 @@ class Page extends CI_Controller {
 			//=====Envoi de l'e-mail.
 
 			mail($mail,$sujet,$message,$header);
-		}
+		}}
 		//si reception inscription newsletter
 		if (isset($_POST['subscribe'])) {
 			$test = array(
@@ -151,6 +153,8 @@ class Page extends CI_Controller {
         $this->data['digest_liste'] = $this->produit_model->get_list('digest',$this->language);
         $this->data['hygiene_liste'] = $this->produit_model->get_list('hygiene',$this->language);
         $this->data['slider_liste'] = $this->produit_model->get_list_slider($this->language);
+
+        $this->data['lang'] = $this->session->userdata['site_lang'];
         //vue
 		$this->load->view('common/head');
 		$this->load->view('common/header');
