@@ -255,4 +255,42 @@ class Produit_model extends CI_Model
             $this->db->update('produits', $data);
         }
     }
+    /***************************************************************************/
+    /** récupération prduit selectioner pour el slider                        **/
+    /***************************************************************************/
+    public function get_selected($sel){
+        //prepa requete
+        $foo = 'SELECT * FROM slider' ;
+        //requete
+        $query = $this->db->query($foo);
+
+        // mise en variable
+        foreach ($query->result_array() as $row)
+        {
+            $return = $row[$sel];
+        }
+        return $return;
+    }
+    /***************************************************************************/
+    /** update slider                        **/
+    /***************************************************************************/
+    public function update_slider($post){
+        $data = array(
+                'sl1fr'  => $post['sl1fr'],
+                'sl2fr'  => $post['sl2fr'],
+                'sl3fr'  => $post['sl3fr'],
+                'sl4fr'  => $post['sl4fr'],
+                'sl1en'  => $post['sl1en'],
+                'sl2en'  => $post['sl2en'],
+                'sl3en'  => $post['sl3en'],
+                'sl4en'  => $post['sl4en'],
+                'sl1du'  => $post['sl1du'],
+                'sl2du'  => $post['sl2du'],
+                'sl3du'  => $post['sl3du'],
+                'sl4du'  => $post['sl4du']
+        );
+        $this->db->empty_table('slider');
+        $this->db->replace('slider', $data);
+    }
+    
 }

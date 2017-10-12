@@ -77,9 +77,25 @@ class Admin extends CI_Controller {
 	public function slider()
 	{
 		$this->load->model('produit_model');
+		//traiter demande de modif
+		if (isset($_POST['modifslide'])) {
+			$this->produit_model->update_slider($_POST);
+		}
+
 		$this->data['produits_liste'] = $this->produit_model->get_list_admin();
 		//rajouter une selcetion des elmnts slider
-
+		$this->data['selection_sl1fr'] = $this->produit_model->get_selected('sl1fr');
+		$this->data['selection_sl2fr'] = $this->produit_model->get_selected('sl2fr');
+		$this->data['selection_sl3fr'] = $this->produit_model->get_selected('sl3fr');
+		$this->data['selection_sl4fr'] = $this->produit_model->get_selected('sl4fr');
+		$this->data['selection_sl1en'] = $this->produit_model->get_selected('sl1en');
+		$this->data['selection_sl2en'] = $this->produit_model->get_selected('sl2en');
+		$this->data['selection_sl3en'] = $this->produit_model->get_selected('sl3en');
+		$this->data['selection_sl4en'] = $this->produit_model->get_selected('sl4en');
+		$this->data['selection_sl1du'] = $this->produit_model->get_selected('sl1du');
+		$this->data['selection_sl2du'] = $this->produit_model->get_selected('sl2du');
+		$this->data['selection_sl3du'] = $this->produit_model->get_selected('sl3du');
+		$this->data['selection_sl4du'] = $this->produit_model->get_selected('sl4du');
 		//affichage page selon connection
 		if ($this->isco) {
 			$this->load->view('admin/header',$this->data);
