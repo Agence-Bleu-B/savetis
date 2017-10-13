@@ -64,7 +64,7 @@
                         <div class="col-md-6 text-center" style="margin-bottom:50px;" >
                             <center>
                                 <a href="../pdf/DRENCH_POMPE-EN-2015.pdf">
-                                    <img src="<?php echo img_url("pompe.jpg") ?>" alt="Products Savetis" style="height:400px;width:auto;">
+                                    <img src="<?php echo img_url("Pompe.jpg") ?>" alt="Products Savetis" style="height:400px;width:auto;">
                                 </a>
                             </center>
                         </div>
@@ -190,7 +190,7 @@
                         <?php foreach ($slider_liste as $key => $value) { ?>
                             <li class="col-md-3">
                                 <?php if ($value['image'] != null && $value['image'] != '') { ?>
-                                    <img src="<?php echo img_url("mElmts/".$value['image']) ; ?>" alt="Products Savetis">
+                                    <img src="<?php echo img_url($value['categorie']."/".$value['image']) ; ?>" alt="Products Savetis">
                                 <?php } else { ?>
                                     <img src="http://via.placeholder.com/170x240" alt="Products Savetis">
                                 <?php } ?> 

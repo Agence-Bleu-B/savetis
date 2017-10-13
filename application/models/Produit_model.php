@@ -54,13 +54,13 @@ class Produit_model extends CI_Model
         //get from produits
         foreach ($query->result_array() as $row){
             if ($lng == 'french') {
-                $foo2 = 'SELECT nom, frtext AS text,image,frpdf AS pdf,id FROM produits WHERE id IN ('.$row["slot1"].','.$row["slot2"].','.$row["slot3"].','.$row["slot4"].')';
+                $foo2 = 'SELECT nom,categorie, frtext AS text,image,frpdf AS pdf,id FROM produits WHERE id IN ('.$row["slot1"].','.$row["slot2"].','.$row["slot3"].','.$row["slot4"].')';
             }
             if ($lng == 'dutch') {
-                $foo2 = 'SELECT nom, dutext AS text,image,dupdf AS pdf,id FROM produits WHERE id IN ('.$row["slot1"].','.$row["slot2"].','.$row["slot3"].','.$row["slot4"].')' ;
+                $foo2 = 'SELECT nom,categorie, dutext AS text,image,dupdf AS pdf,id FROM produits WHERE id IN ('.$row["slot1"].','.$row["slot2"].','.$row["slot3"].','.$row["slot4"].')' ;
             }
             if ($lng == 'english') {
-                $foo2 = 'SELECT nom, entext AS text,image,enpdf AS pdf,id FROM produits WHERE id IN ('.$row["slot1"].','.$row["slot2"].','.$row["slot3"].','.$row["slot4"].')' ;
+                $foo2 = 'SELECT nom,categorie, entext AS text,image,enpdf AS pdf,id FROM produits WHERE id IN ('.$row["slot1"].','.$row["slot2"].','.$row["slot3"].','.$row["slot4"].')' ;
             }
         }
         $query2 = $this->db->query($foo2);
@@ -68,6 +68,12 @@ class Produit_model extends CI_Model
         $i=0;
         foreach ($query2->result_array() as $row)
         {
+            if ($row['categorie'] == 'macro-elements') {
+                $return[$i]['categorie'] = "mElmts";
+            }
+            else{
+                $return[$i]['categorie'] = $row['categorie'];
+            }
             $return[$i]['nom'] = $row['nom'];
             $return[$i]['id'] = $row['id'];
             $return[$i]['image'] = $row['image'];
