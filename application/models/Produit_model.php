@@ -197,11 +197,18 @@ class Produit_model extends CI_Model
     /***************************************************************************/
     public function modif_image($post,$files){
         $filename=$files['photo']['name'];
+        //verif categorie
+        if ($post["cat"] == "macro-elements") {
+            $catego = "mElmts";
+        }
+        else{
+            $catego = $post["cat"];
+        }
         //enregistre images
         //load library
         $this->load->library('upload');
         // config upload
-        $chemin = './assets/images/'.$post["cat"];
+        $chemin = './assets/images/'.$catego;
         $config['upload_path'] = $chemin;
         $config['allowed_types'] = 'gif|jpg|png';
         $config['max_size']    = '0';
