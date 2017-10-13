@@ -12,9 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       	<hr />
       	<!-- contenu a partir d'ici -->
       	<div class="row text-center pad-top">
-          <h3>français</h3>
-          <h3>anglais</h3>
-          <h3>hollandais</h3>
+          <?php foreach ($liste as $key => $value) { 
+            echo $value['mail']."<br>";
+          } ?>
       	</div>
       	<!-- /. contenu  -->
          <!-- /. ROW  -->           

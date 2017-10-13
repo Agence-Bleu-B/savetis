@@ -109,6 +109,19 @@ class Admin extends CI_Controller {
 	}
 	public function newsletter()
 	{
+		//recuperation liste
+		$listinscrits = array();
+        //prepa requete
+        $foo = 'SELECT * FROM newsletter' ;
+        //requete
+        $query = $this->db->query($foo);
+
+        // mise en variable
+        foreach ($query->result_array() as $row)
+        {
+            $listinscrits = $row['mail'];
+        }
+        //$this->$data2['liste'] = $listinscrits;
 		//affichage page selon connection
 		if ($this->isco) {
 			$this->load->view('admin/header',$this->data);
