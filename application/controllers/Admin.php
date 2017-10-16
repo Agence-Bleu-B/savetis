@@ -119,9 +119,10 @@ class Admin extends CI_Controller {
         // mise en variable
         foreach ($query->result_array() as $row)
         {
-            $listinscrits = $row['mail'];
+            $listinscrits[] = $row['mail'];
         }
-        //$this->$data2['liste'] = $listinscrits;
+        $this->data2['liste'] = $listinscrits;
+
 		//affichage page selon connection
 		if ($this->isco) {
 			$this->load->view('admin/header',$this->data);

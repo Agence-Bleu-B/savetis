@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       	<!-- contenu a partir d'ici -->
       	<div class="row text-center pad-top">
           <?php foreach ($liste as $key => $value) { 
-            echo $value['mail']."<br>";
+            echo $value."<br>";
           } ?>
       	</div>
       	<!-- /. contenu  -->
