@@ -12,9 +12,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       	<hr />
       	<!-- contenu a partir d'ici -->
       	<div class="row text-center pad-top">
-          <?php foreach ($liste as $key => $value) { 
-            echo $value."<br>";
-          } ?>
+          <div class="col-md-7 col-md-offset-2">
+            <table class="table table-bordered">
+              <thead>
+                <tr><th>n°</th><th>mail</th></tr>
+              </thead>
+              <tbody>
+                <?php foreach ($liste as $key => $value) { 
+                  echo "<tr> <th>".$value['id']."</th> <td>".$value['mail']."</td></tr>";
+                  } ?>
+              </tbody>
+            
+
+            </table>
+
+          </div>
+        
       	</div>
       	<!-- /. contenu  -->
          <!-- /. ROW  -->           

@@ -119,7 +119,7 @@ class Admin extends CI_Controller {
         // mise en variable
         foreach ($query->result_array() as $row)
         {
-            $listinscrits[] = $row['mail'];
+            $listinscrits[] = $row;
         }
         $this->data2['liste'] = $listinscrits;
 
